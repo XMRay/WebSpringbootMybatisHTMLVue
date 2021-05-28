@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.demo2.dao.UserDao">
+    <select id="getUserById" resultType="User">
+        select * from `user` where id=#{id}
+    </select>
+<!--    <select id="getUserById2" resultType="User">-->
+<!--        select * from `user` where age=#{age}-->
+<!--    </select>-->
+    <select id="getUserAll" resultType="User">
+        select * from `user`
+    </select>
+    <select id="addUser" resultType="User">
+        insert into `user` values (#{id},#{username},#{des},#{age})
+    </select>
+    <select id="changeUser" resultType="User">
+        update user set id=#{id},username=#{username},des=#{des},age=#{age} where id=#{oldid}
+    </select>
+    <select id="delUser" resultType="User">
+        delete from `user` where id=#{id}
+    </select>
+</mapper>
